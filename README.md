@@ -3,9 +3,9 @@
 **Developed in 2021** <br />
 as Personal Project <br /><br />
 
-_**Webiste URL:** https://ieltsprep.web.app_
-
 *This website is created for helping people to prepare for IELTS exam*<br />
+
+_**Webiste URL:** https://ieltsprep.web.app_
 
 **Screenshots**
 
