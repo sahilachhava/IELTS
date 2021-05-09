@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=1440">
+    <title>Prepare IELTS Reading - The School of English</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.png">
+
+    <!-- pre-loaded css -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!-- custom made css -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <!-- Header Area Start Here -->
+            <div class="headerMenu menuLayout">
+                <div class="container">
+                    <div class="row">
+                            <a href="../index.html">
+                                <img src="../assets/images/headerLogo.png" alt="logo" class="mainLogo">
+                            </a>
+                            <div class="mainMenu">
+                                <nav id="dropdown">
+                                    <ul class="headerList">
+                                        <li>
+                                            <a href="../index.html">Home</a>
+                                        </li>
+                                        <li class="programs">
+                                            <a href="../index.html#aboutIELTS">About IELTS</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../index.html#aboutListening"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../index.html#aboutReading"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../index.html#aboutWriting"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../index.html#aboutSpeaking"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../listening.html">Listening</a>
+                                        </li>
+                                        <li>
+                                            <a href="../reading.html">Reading</a>
+                                        </li>
+                                        <li>
+                                            <a href="../writing.html">Writing</a>
+                                        </li>
+                                        <li>
+                                            <a href="../speaking.html">Speaking</a>
+                                        </li>
+                                        <li class="programs active">
+                                            <a href="#">Prepare</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../listening/prepare.html"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../reading/prepare.html"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../writing/prepare.html"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../speaking/prepare.html"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="programs">
+                                            <a href="#">Practice</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../listening/practiceTest.html"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../reading/practiceTest.html"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../writing/practiceTest.html"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../speaking/practiceTest.html"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../bands.html">IELTS Band</a>
+                                        </li>
+                                        
+                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Header Area End Here -->
+
+            <div class="prepareListening">
+                <h2 class="heading"> Prepare for IELTS Reading </h2>
+                <div class="sections">
+                    <div class='lights'></div>
+                </div>
+            </div>
+
+
+        <div class="footBottom">
+            <p>ALL THE BEST :: IELTS © 2021</p>
+        </div>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script>
+    db.collection("ielts").doc("reading").get().then((doc) => {
+        var data = doc.data();
+        for(var i = 0; i < data.prepareVideoCount; i++){
+            $('.sections').append(
+                '<div class="section" id="i'+i+'">'+
+                    '<h4> '+ data["prepareVideo"+(i+1)][0] +' </h4>'+
+                    '<img class="thumbnail" src="../assets/images/playImage.png" data-bs-toggle="modal" data-bs-target="#myModal'+i+'" data-backdrop="static" data-keyboard="false"/>'+
+                '</div>'+
+
+                '<div id="myModal'+i+'" class="modal fade frameModal">'+
+                '<div class="modal-dialog">'+
+                    '<div class="modal-content">'+
+                        '<div class="modal-header">'+
+                            '<h5 class="modal-title">'+ data["prepareVideo"+(i+1)][0] +'</h5>'+
+                            '<a type="button" class="switch"><i class="fa fa-lightbulb-on"></i>&nbsp;&nbsp;Turn Off Lights</a>'+
+                            '<button type="button" class="close" data-bs-dismiss="modal">&times;</button>'+
+                        '</div>'+
+                        '<div class="modal-body">'+
+                        '<div class="embed-responsive embed-responsive-16by9">'+
+                            '<iframe id="frame'+i+'" class="embed-responsive-item video" src="'+ data["prepareVideo"+(i+1)][1] +'" allowfullscreen></iframe>'+
+                            '<div class="lights"></div>'+
+                        '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '</div>'
+            );
+            $(".lights").css("height", $(document).height()).hide();
+        }
+    });
+</script>
+<script type='text/javascript'>
+    var per = 0;
+    $(document).ready(function(){
+        //Lights jQuery
+        $(".lights").css("height", $(document).height()).hide();
+        $(document).on('click', function(e) {
+            if($(e.target).hasClass('switch') && per == 1) {
+                $(".lights").toggle();
+                per = 0;
+                $(e.target).html('<i class="fa fa-lightbulb-on"></i>&nbsp;&nbsp;Turn Off Lights');
+            }else if($(e.target).hasClass('switch') && per == 0){
+                $(".lights").toggle();
+                per = 1;
+                $(e.target).html('<i class="fa fa-lightbulb"></i>&nbsp;&nbsp;Turn On Lights');
+            }else if(!$(e.target).hasClass('switch') && per == 1) {
+                $(".lights").toggle();
+                per = 0;
+            }
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=1440">
+    <title>Practice IELTS Listening - The School of English</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/fav.png">
+
+    <!-- pre-loaded css -->
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+
+    <!-- custom made css -->
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <!-- Header Area Start Here -->
+            <div class="headerMenu menuLayout">
+                <div class="container">
+                    <div class="row">
+                            <a href="../index.html">
+                                <img src="../assets/images/headerLogo.png" alt="logo" class="mainLogo">
+                            </a>
+                            <div class="mainMenu">
+                                <nav id="dropdown">
+                                    <ul class="headerList">
+                                        <li>
+                                            <a href="../index.html">Home</a>
+                                        </li>
+                                        <li class="programs">
+                                            <a href="../index.html#aboutIELTS">About IELTS</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../index.html#aboutListening"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../index.html#aboutReading"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../index.html#aboutWriting"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../index.html#aboutSpeaking"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../listening.html">Listening</a>
+                                        </li>
+                                        <li>
+                                            <a href="../reading.html">Reading</a>
+                                        </li>
+                                        <li>
+                                            <a href="../writing.html">Writing</a>
+                                        </li>
+                                        <li>
+                                            <a href="../speaking.html">Speaking</a>
+                                        </li>
+                                        <li class="programs">
+                                            <a href="#">Prepare</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../listening/prepare.html"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../reading/prepare.html"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../writing/prepare.html"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../speaking/prepare.html"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="programs active">
+                                            <a href="#">Practice</a>
+                                            <ul class="headerList subHeading">
+                                                <li><a href="../listening/practiceTest.html"><i class="fa fa-arrow-right"></i>Listening</a></li>
+                                                <li><a href="../reading/practiceTest.html"><i class="fa fa-arrow-right"></i>Reading</a></li>
+                                                <li><a href="../writing/practiceTest.html"><i class="fa fa-arrow-right"></i>Writing</a></li>
+                                                <li><a href="../speaking/practiceTest.html"><i class="fa fa-arrow-right"></i>Speaking</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="../bands.html">IELTS Band</a>
+                                        </li>
+                                        
+                                    </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Header Area End Here -->
+
+            <div class="mockListening prepareListening">
+                <h2 class="heading"> Practice Tests for IELTS Listening </h2>
+                <span data-bs-toggle="modal" data-bs-target="#myModal" data-backdrop="static" data-keyboard="false">Instructions</span>
+                <div class="sections">
+                    <div class='lights'></div>
+                </div>
+            </div>
+
+            <div id="myModal" class="modal fade frameModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"> Important Instructions </h5>
+                            <a type="button" class="switch"><i class="fa fa-lightbulb-on"></i>&nbsp;&nbsp;Turn Off Lights</a>
+                            <button class="showAnswer" value="btn" style="position: fixed; background-color: #000;border-radius: 30px;padding: 7px 10px;cursor: pointer;margin-left: 475px;z-index: 117;" onclick="show('0');"><i class="fa fa-file-alt"></i>&nbsp;&nbsp;Calculate Bands</button>
+                            <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <div class="bandForm" hidden>
+                                <h3>Calculate your bands</h3>
+                                <form class="form-control" onsubmit="calculateBands(); return false;">
+                                    <label>Enter your obtained score</label>
+                                    <input class="form-control" type="number" id="enteredScore" maxlength="2" placeholder="Ex. 25, 30" required/>
+                                    <button type="submit">Calculate My Bands</button>
+                                    <h2 id="bandResult"></h2>
+                                </form>
+                            </div>
+                            <div class="practiceAnswer">
+                                <h3>Setting up Exam Enviornment</h3>
+                                <p>
+                                    Step 1: Get Book, Pen and Earphone for listening exams.
+                                    <br><br>
+                                    Step 2: Divide page into half and number it from 1 to 40 (leave space maximum of 3 words)
+                                    <br><br>
+                                    Step 3: Sit in without distraction enviornment, and start the test.
+                                    <br> <br>
+                                    Note 1: You should not pause it or go backwards if anything you didn't see / hear properly.
+                                    <br> <br>
+                                    Note 2: You should only fill all the answers, if you missed some, no issue at all, be honest here.
+                                    <br> <br>
+                                    Note 3: At the end of the test, you will see answers, check yourself and count your final score.
+                                    <br> <br>
+                                    Note 4: Single character mistake or spelling mistakes are also considered as wrong.  
+                                    <br> <br>
+                                    Note 4: Single character mistake or spelling mistakes are also considered as wrong.  
+                                    <br> <br>
+                                    Note 5: At last, check how much bands you scored with your score, click above button to count your bands.  
+                                </p>
+                            </div>
+                            <div class="lights"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+        <div class="footBottom">
+            <p>ALL THE BEST :: IELTS © 2021</p>
+        </div>
+    </div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/bootstrap.min.js"></script>
+<script>
+    db.collection("ielts").doc("listening").get().then((doc) => {
+        var data = doc.data();
+        for(var i = 0; i < data.testVideoCount; i++){
+            $('.sections').append(
+                '<div class="section" id="i'+i+'">'+
+                    '<h4> '+ data["testVideo"+(i+1)][0] +' </h4>'+
+                    '<img class="thumbnail" src="../assets/images/playImage.png" data-bs-toggle="modal" data-bs-target="#myModal'+i+'" data-backdrop="static" data-keyboard="false"/>'+
+                '</div>'+
+
+                '<div id="myModal'+i+'" class="modal fade frameModal">'+
+                '<div class="modal-dialog">'+
+                    '<div class="modal-content">'+
+                        '<div class="modal-header">'+
+                            '<h5 class="modal-title">'+ data["testVideo"+(i+1)][0] +'</h5>'+
+                            '<a type="button" class="switch"><i class="fa fa-lightbulb-on"></i>&nbsp;&nbsp;Turn Off Lights</a>'+
+                            '<button type="button" class="close" data-bs-dismiss="modal">&times;</button>'+
+                        '</div>'+
+                        '<div class="modal-body">'+
+                        '<div class="embed-responsive embed-responsive-16by9">'+
+                            '<iframe id="frame'+i+'" class="embed-responsive-item video" src="'+ data["testVideo"+(data.testVideoCount-i)][1] +'" allowfullscreen></iframe>'+
+                            '<div class="lights"></div>'+
+                        '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '</div>'
+            );
+        }
+        $(".lights").css("height", $(document).height()).hide();
+    });
+</script>
+<script type='text/javascript'>
+    var per = 0;
+    $(document).ready(function(){
+        //Lights jQuery
+        $(".lights").css("height", $(document).height()).hide();
+        $(document).on('click', function(e) {
+            if($(e.target).hasClass('switch') && per == 1) {
+                $(".lights").toggle();
+                per = 0;
+                $(e.target).html('<i class="fa fa-lightbulb-on"></i>&nbsp;&nbsp;Turn Off Lights');
+            }else if($(e.target).hasClass('switch') && per == 0){
+                $(".lights").toggle();
+                per = 1;
+                $(e.target).html('<i class="fa fa-lightbulb"></i>&nbsp;&nbsp;Turn On Lights');
+            }else if(!$(e.target).hasClass('switch') && per == 1) {
+                $(".lights").toggle();
+                per = 0;
+            }
+        });
+    });
+
+    var status = 0;
+    function show(index){
+        if(status == 0){
+            $("#myModal .practiceAnswer").hide();
+            $("#myModal .bandForm").removeAttr("hidden");
+            $("#myModal .showAnswer").html('<i class="fa fa-file-alt"></i>&nbsp;&nbsp;See Instrutions');
+            status = 1;
+        }else{
+            $("#myModal .practiceAnswer").show();
+            $("#myModal .bandForm").attr("hidden", "true");
+            $("#myModal .showAnswer").html('<i class="fa fa-file-alt"></i>&nbsp;&nbsp;Calculate Bands');
+            status = 0;
+        }
+    }
+
+    function calculateBands(){
+        var enteredScore = document.getElementById("enteredScore").value;
+        if(enteredScore <= 0 || enteredScore > 40){
+            document.getElementById("bandResult").innerHTML = "Invalid Score, Please enter valid score!!";
+            return;
+        }
+        var listeningBandsInfo = {
+            9 : [39,40],
+            8.5 : [37,38],
+            8 : [35,36],
+            7.5 : [32,33,34],
+            7 : [30,31],
+            6.5 : [26,27,28,29],
+            6 : [23,24,25],
+            5.5 : [18,19,20,21,22],
+            5 : [16,17],
+            4.5 : [13,14,15],
+            4 : [10,11,12],
+            3.5 : [8,9],
+            3 : [6,7],
+            2.5 : [4,5]
+        };
+
+        for(var i = 9; i > 2; i = i - 0.5){
+            for(var j = 0; j < listeningBandsInfo[i].length; j++){
+                if(listeningBandsInfo[i][j] == enteredScore){
+                    document.getElementById("bandResult").innerHTML = "Congratulations, You got <span>" + i + "</span> bands!!";
+                    break;
+                }
+            }
+        }
+    }
+</script>
+</html>
